@@ -1,0 +1,7 @@
+$('#messages').prepend('<%= escape_javascript(render(@message)) %>');
+$('#messages > li:first').effect('highlight', {}, 3000);
+$('#message_form > form')[0].reset();
+$(function() { alert('A message is created!!');});
+
+
+//$('#test10').replaceWith('Hello world!');

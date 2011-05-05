@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Seatno:</b>
+  <%= @seat.seatno %>
+</p>
+
+<p id= seats>
+  <b>Nickname:</b>
+  <%= @seat.nickname %>
+</p>
+
+<%= link_to 'Back', messages_path %>
+
+<!-- <%=link_to_function "Greeting", "$(function() {alert('Test44444444444444');})" %> -->
+
+<!-- <%=link_to_function "Greeting", "$(function() {location.reload();)" %> -->
+
+
+
+<%= link_to "new seat", new_seat_path(@seat, :format => :js),
+:remote => true, :id => 'new_seat_link' %>
+

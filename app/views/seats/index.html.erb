@@ -1,0 +1,24 @@
+<center><br><br>
+<h1>Class Seating Chart</h1>
+<br><br>
+<table border= "3" width= "100" height= "300" cellpadding="5" cellspacing="5">
+
+<tr>
+<% @seats.each do |seat| %>
+    <td bgcolor= "ADD8E6">Seat#:<%= seat.seatno %></td>  
+    <% if @users %>
+          <% if (seat.nickname != 'empty') %>
+             <td bgcolor = #FF00FF><%= seat.nickname %></td>    
+          <% else %><td><%= seat.nickname %></td>    
+          <% end %>
+  <% else %>
+          <td><%= seat.nickname %></td>    
+  <% end %>  
+  <% if((seat.seatno % 4) == 0 )%> </tr><% end %>
+<% end %>
+</table>
+<br>
+<%= link_to 'Login', '/login' %>
+
+
+

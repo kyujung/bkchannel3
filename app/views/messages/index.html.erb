@@ -1,0 +1,49 @@
+<center>
+<h1>Welcome to Backchannel System!!</h1>
+<br>
+<% if @users %>
+<font color="#FF00FF">(login user::<%= @users.nickname %>)</font>
+<% end %>
+
+<h3>Classroom Seating Chart</h3>
+
+<div id="seats">
+<table border= "3" width= "50" height= "150" cellpadding="5" cellspacing="5">
+<tr>
+
+<% @seats.each do |seat| %>
+    <td bgcolor= "ADD8E6">Seat#:<%= seat.seatno %></td>  
+    <% if @users %>
+          <% if (seat.nickname != 'empty') %>
+             <td bgcolor = #FF00FF><%= seat.nickname %></td>
+             <td>Selected</td>     
+          <% else %><td><%= seat.nickname %></td>
+                    <td><%= link_to 'Select', edit_seat_path(seat, :format => :js), :remote => true %></td>    
+          <% end %>
+  <% else %>
+          <td><%= seat.nickname %></td>
+           <td>Select</td>        
+  <% end %>  
+    <% if((seat.seatno % 4) == 0 )%> </tr><% end %>
+<% end %>
+</table>
+</div>
+
+<br>
+<h3>Live Chat Room</h3>
+<div style= "background-color:orange; width:800px; height:200px">
+<div align="left">
+  
+  <ul id="messages">
+  <%= render :partial => @messages.reverse %>
+  </ul>
+</div>  
+</div>
+
+<div id="message_form">  
+  <%= render 'form' %>
+</div>
+
+<br />
+<%= link_to 'logout', '/logout' %>
+</center>

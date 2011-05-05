@@ -1,0 +1,7 @@
+<%= content_tag_for(:li, message) do %>
+
+  <font color="rrggbb"><br>(From:<%= message.nickname %>=>To:<%= message.receiver %>)</font>
+  @<%= message.body %>::<%= message.created_at %>
+  <%= link_to 'Delete', message, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+
+<% end %>

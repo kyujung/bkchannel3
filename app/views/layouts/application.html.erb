@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag 'jquery.min', 'jquery-ui.min', 'rails' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<%= content_tag :p, notice, :class => 'notice' if notice.present? %>
+<%= content_tag :p, alert, :class => 'alert' if alert.present? %>
+
+<%= yield %>
+
+
+</body>
+</html>

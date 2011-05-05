@@ -1,0 +1,26 @@
+<center><br><br><br><br>
+<div style= "width:600px; height:400px; background:#F0E68C">
+<center>
+<br><br><br><br><br>
+<h1>Login</h1>
+
+<%= form_tag session_path do %>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Login' %>
+  </div>
+<% end %>
+
+<%= link_to 'Class Seating Chart', '/seats' %>
+<%= link_to 'Register', new_user_path %>
+<%= link_to 'Seat Creation', new_seat_path %>
+
+</div>
+</center>
